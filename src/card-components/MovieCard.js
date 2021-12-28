@@ -30,14 +30,26 @@ const posterMap = {
 export default class MovieCard extends Component {
 
   render() {
+    console.log(this.props.title); //MovieCard is in MovieShowcase, so from the function generateMovieCards 1) calls the data.js array in Movie showcase then 2) and gets properties 3)and then title
     return (
       <div className="movie-card">
         {/* which component should receive which props? */}
-        <CardFront />
-        <CardBack />
+        <CardFront poster={posterMap[this.props.poster]} /> 
+        <CardBack 
+          title={this.props.title} 
+          IMDBRating={this.props.IMDBRating} 
+          genres={this.props.genres} 
+        />
       </div>
     )
   }
 }
 
+
+MovieCard.defaultProps = {
+  title: 'Unknown',
+  IMDBRating: null,
+  genres: ['No Genre(s) Found'],
+  poster: 'default'
+}
 // Don't forget your default props!

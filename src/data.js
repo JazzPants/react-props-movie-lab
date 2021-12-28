@@ -21,7 +21,7 @@ const movieData = [
   {
     title: 'Escape from VIM',
     IMDBRating: 0,
-    genres: ['an awful movie'],
+    // genres: ['an awful movie'],
     poster: 'escape-from-vim'
   },
   {
